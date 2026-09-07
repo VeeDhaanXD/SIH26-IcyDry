@@ -1,0 +1,183 @@
+:root {
+  /* ── Dark Theme (default) ── */
+  --bg-primary: #08090d;
+  --bg-secondary: #0e1017;
+  --bg-card: #14161f;
+  --bg-card-hover: #1a1c28;
+  --bg-glass: rgba(20, 22, 31, 0.72);
+  --bg-glass-solid: #14161f;
+  --border: #1e2030;
+  --border-light: #2a2d42;
+  --text: #8b8fa8;
+  --text-bright: #f0f1f5;
+  --text-muted: #555873;
+  --accent-orange: #f97316;
+  --accent-teal: #14b8a6;
+  --accent-green: #10b981;
+  --accent-yellow: #eab308;
+  --accent-red: #ef4444;
+  --accent-rose: #f43f5e;
+  --sidebar-width: 220px;
+  --sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  font-family: var(--sans);
+  color-scheme: dark;
+}
+
+body.light {
+  --bg-primary: #e8e4dc;
+  --bg-secondary: #f0ece4;
+  --bg-card: #f7f3eb;
+  --bg-card-hover: #fffdf7;
+  --bg-glass: rgba(247, 243, 235, 0.88);
+  --bg-glass-solid: #f7f3eb;
+  --border: #d4cfc4;
+  --border-light: #b8b2a4;
+  --text: #5c5a52;
+  --text-bright: #1a1815;
+  --text-muted: #8a8578;
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-4px) rotate(0.5deg); }
+  66% { transform: translateY(2px) rotate(-0.3deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+  50% { box-shadow: 0 0 20px 2px rgba(249, 115, 22, 0.12); }
+}
+
+@keyframes breatheOrange {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+  50% { box-shadow: 0 0 24px 3px rgba(249, 115, 22, 0.15); }
+}
+
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.6); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fillWidth {
+  from { width: 0%; }
+}
+
+@keyframes progressPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
