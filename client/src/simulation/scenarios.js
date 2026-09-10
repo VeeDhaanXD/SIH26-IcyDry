@@ -1,0 +1,97 @@
+export const scenarios = [
+  {
+    id: 'sunny',
+    name: 'Normal Sunny Day',
+    icon: '☀️',
+    description: 'Optimal drying conditions with strong solar energy',
+    config: {
+      solarIntensity: 850,
+      ambientTemp: 32,
+      ambientHumidity: 55,
+      battery: 90,
+      initialMoisture: 28,
+      batchWeight: 1.5,
+    },
+    aiNote: 'Normal drying expected. All parameters within optimal range.',
+  },
+  {
+    id: 'cloudy',
+    name: 'Cloudy Weather',
+    icon: '☁️',
+    description: 'Low solar availability, auxiliary heating needed',
+    config: {
+      solarIntensity: 250,
+      ambientTemp: 27,
+      ambientHumidity: 72,
+      battery: 65,
+      initialMoisture: 30,
+      batchWeight: 1.5,
+    },
+    aiNote: 'Low solar availability detected. Auxiliary heating recommended.',
+  },
+  {
+    id: 'high_humidity',
+    name: 'High Humidity',
+    icon: '💧',
+    description: 'Moisture removal will be slower than usual',
+    config: {
+      solarIntensity: 600,
+      ambientTemp: 30,
+      ambientHumidity: 82,
+      battery: 75,
+      initialMoisture: 35,
+      batchWeight: 1.8,
+    },
+    aiNote: 'Drying efficiency reduced. Increase ventilation.',
+  },
+  {
+    id: 'over_temp',
+    name: 'Over-temperature',
+    icon: '🔥',
+    description: 'Safety event: temperature exceeding limits',
+    config: {
+      solarIntensity: 950,
+      ambientTemp: 38,
+      ambientHumidity: 45,
+      battery: 80,
+      initialMoisture: 25,
+      batchWeight: 1.2,
+      initialTemp: 56,
+    },
+    aiNote: 'SAFETY EVENT: Heater OFF, Fan 100% for cooling.',
+  },
+  {
+    id: 'low_battery',
+    name: 'Low Battery',
+    icon: '🔋',
+    description: 'Energy-saving mode with reduced fan/heater',
+    config: {
+      solarIntensity: 200,
+      ambientTemp: 28,
+      ambientHumidity: 68,
+      battery: 15,
+      initialMoisture: 28,
+      batchWeight: 1.5,
+    },
+    aiNote: 'Energy-saving mode activated. Reduced power operation.',
+  },
+  {
+    id: 'night',
+    name: 'Night Drying',
+    icon: '🌙',
+    description: 'No solar, battery-powered operation',
+    config: {
+      solarIntensity: 0,
+      ambientTemp: 24,
+      ambientHumidity: 70,
+      battery: 60,
+      initialMoisture: 28,
+      batchWeight: 1.5,
+    },
+    aiNote: 'No solar energy. Running on battery. Drying will be slower.',
+  },
+];
+
+export function getScenarioPreset(id) {
+  return scenarios.find(s => s.id === id);
+}
